@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1px 0;
+
+    .card {
+        background-color: #fff;
+        padding: 10px;
+        margin: 15px;
+
+        .title {
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+
+            > span {
+                margin-left: 10px;
+                div {
+
+                    &:first-of-type {
+                        font-size: 1.4rem;
+                        margin-bottom: 4px;
+    
+                        a {
+                            color: blue;
+                            cursor: pointer;
+                        }
+                    }
+    
+                    &:last-of-type {
+                        color: rgb(155, 155, 155);
+                    }
+                }
+            }
+        }
+        
+    }
+}
