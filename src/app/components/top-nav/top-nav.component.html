@@ -7,5 +7,16 @@
             <li><a routerLink="/map" routerLinkActive="active">Map</a></li>
         </ul>
     </nav>
-    <div class="settings">User Settings</div>
+
+    <span class="settings" (mouseenter)="openSettings = true" (mouseleave)="openSettings = false">
+        User Settings
+        <ul *ngIf="openSettings" class="dowpdown">
+            <li (click)="togleTheme()">
+                Switch to {{ theme == "light" ? "dark" : "light" }} mode;
+            </li>
+            <li>
+                Logout
+            </li>
+        </ul>
+    </span>
 </div>

@@ -2,4 +2,15 @@
 
 body {
     margin: 0;
+    --top-nav-height: 68px;
+
+    &.light {
+        --top-backgroud-color: #1976d2;
+        --body-backgroud-color: #eaeaea;
+    }
+
+    &.dark {
+        --top-backgroud-color: #08223d;
+        --body-backgroud-color: #363333;
+    }
 }

@@ -1,5 +1,5 @@
 .main-container {
-    background-color: gray;
-    margin-top: 70px;
-    height: calc(100vh - 70px);
+    background-color: var(--body-backgroud-color);
+    margin-top: var(--top-nav-height);
+    min-height: calc(100vh - var(--top-nav-height));
 }
