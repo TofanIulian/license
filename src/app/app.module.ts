@@ -8,6 +8,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { CalendarComponent, ChunkPipe } from './components/calendar/calendar.component';
 import { MapComponent } from './components/map/map.component';
 import { CommonModule } from '@angular/common';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
