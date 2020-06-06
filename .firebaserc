@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "usr-events": {
+      "hosting": {
+        "license": [
+          "usr-events"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "usr-events"
+  }
+}
