@@ -9,6 +9,7 @@ import { CalendarComponent, ChunkPipe } from './components/calendar/calendar.com
 import { MapComponent } from './components/map/map.component';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps'
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
