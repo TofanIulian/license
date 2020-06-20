@@ -1,0 +1,67 @@
+.container {
+    max-width: 400px;
+    padding-top: 100px;
+    margin: 0 auto;
+
+    .card {
+        padding: 20px;
+    
+        button {
+            width: 100%;
+        }
+
+        form {
+            h3 {
+                margin-bottom: 20px;
+            }
+    
+            label {
+                font-weight: 600;
+            }
+    
+            
+
+            .input-group:last-of-type {
+                margin-bottom: 30px;
+
+                &.invalid {
+                    margin-bottom: 9px;
+                }
+            }
+        }
+        
+        .separator {
+            margin: 10px 0;
+            .or {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        .third-party {
+            span:first-of-type {
+                padding: 0 5px 0 0 ;
+            }
+            span:last-of-type {
+                padding: 0 0 0 5px ;
+            }
+
+            .google-button {    
+                background-color: #DB4437;
+            }
+            .facebook-button {
+                background-color: #3b5998;
+            }
+
+            i {
+                margin-right: 8px;
+            }
+        }
+        
+        .register {
+            margin: 0 0 0 0;
+        }
+    }
+    
+}

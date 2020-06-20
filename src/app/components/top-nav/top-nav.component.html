@@ -8,13 +8,13 @@
         </ul>
     </nav>
 
-    <span class="settings" (mouseenter)="openSettings = true" (mouseleave)="openSettings = false">
+    <span *ngIf="user" class="settings" (mouseenter)="openSettings = true" (mouseleave)="openSettings = false">
         User Settings
         <ul *ngIf="openSettings" class="dowpdown">
             <li (click)="togleTheme()">
                 Switch to {{ theme == "light" ? "dark" : "light" }} mode;
             </li>
-            <li>
+            <li (click)="auth.logout()">
                 Logout
             </li>
         </ul>

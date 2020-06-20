@@ -7,10 +7,73 @@ body {
     &.light {
         --top-backgroud-color: #1976d2;
         --body-backgroud-color: #eaeaea;
+        --btn-backgroud-color: #0F9D58;
+        --btn-backgroud-disabled-color: gray;
+        --btn-text-color: #fff;
     }
 
     &.dark {
         --top-backgroud-color: #08223d;
         --body-backgroud-color: #363333;
+        --btn-backgroud-color: rgb(12, 94, 54);
+        --btn-backgroud-disabled-color: gray;
+        --btn-text-color: rgb(221, 221, 221);
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .input-group {
+        margin-bottom: 21px;
+
+        &.invalid {
+            margin-bottom: 0px;
+            input, textarea {
+                border-color: #ec0000;
+            }
+        }
+        &.valid {
+            input, textarea {
+                border-color: green;
+            }
+        }
+        input, textarea {
+            &:focus {
+                border-color: rgb(3, 3, 172);
+            }
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        outline: none;
+        line-height: 16px;
+        border-style: solid;
+        border-width: 1px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+    }
+    
+    .input-error {
+        font-size: 14px;
+        color: #ec0000;
+    }
+
+    button {
+        font-weight: 600;
+        background-color: var(--btn-backgroud-color);
+        border: none;
+        color: var(--btn-text-color);
+        padding: 8px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.5s;
+
+        &:disabled {
+            background-color: var(--btn-backgroud-disabled-color);
+        }
     }
 }

@@ -12,6 +12,11 @@ import { GoogleMapsModule } from '@angular/google-maps'
 import { CoreModule } from './core/core.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,10 @@ import { environment } from 'src/environments/environment';
     FeedComponent,
     CalendarComponent,
     MapComponent,
-    ChunkPipe
+    ChunkPipe,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +37,12 @@ import { environment } from 'src/environments/environment';
     GoogleMapsModule,
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AngularFireAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

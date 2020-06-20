@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="card">
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="login(loginForm.value)">
+            <h3>Login</h3>
+            <div class="input-group"
+                [ngClass]="{'invalid': email.invalid && (email.dirty || email.touched), 'valid': email.valid}">
+                <label for="email">Email:</label>
+                <input type="text" name="email" formControlName="email">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="input-error">
+                    <div *ngIf="email.errors.required">
+                        Email is required.
+                    </div>
+                    <!-- <div *ngIf="email.errors.email">
+                        This is not a valid email addres.
+                    </div> -->
+                </div>
+            </div>
+            <div class="input-group"
+                [ngClass]="{'invalid': password.invalid && (password.dirty || password.touched), 'valid': password.valid}">
+                <label for="password">Password:</label>
+                <input type="password" name="password" formControlName="password">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="input-error">
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        Password too short.
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        </form>
+
+        <div class="row separator">
+            <span class="col-5">
+                <hr></span>
+            <span class="col-2 or">OR</span>
+            <span class="col-5">
+                <hr></span>
+        </div>
+
+        <div class="row third-party">
+            <span class="col-6">
+                <button class="google-button" (click)="auth.googleLogin()">
+                    <i class="fa fa-google"></i>Google
+                </button>
+            </span>
+            <span class="col-6">
+                <button class="facebook-button" (click)="auth.facebookLogin()">
+                    <i class="fa fa-facebook"></i>Facebook
+                </button>
+            </span>
+        </div>
+
+        <hr>
+        
+        <p class="register">You don't have an account? <a routerLink="/register">Regiser now.</a></p>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { AuthService } from 'src/app/core/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-top-nav',
@@ -10,9 +12,13 @@ export class TopNavComponent implements OnInit {
   openSettings: boolean = false;
   theme: string;
 
-  constructor() { }
+  user: User;
+
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+
+    this.auth.user.subscribe(user => this.user = user)
 
     this.theme = localStorage.getItem("theme") 
 
