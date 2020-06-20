@@ -1,6 +1,6 @@
 <div class="top-nav">
     <img src="../../../assets/logo.png" alt="">
-    <nav>
+    <nav *ngIf="user">
         <ul>
             <li><a routerLink="/feed" routerLinkActive="active">Feed</a></li>
             <li><a routerLink="/calendar" routerLinkActive="active">Calendar</a></li>

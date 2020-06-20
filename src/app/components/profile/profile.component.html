@@ -1,30 +1,22 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
-
-</div>
-
-<ng-template #guest>
-    <h1>Hello guest</h1>
-    <h3>Please login</h3>
-    <button (click)="auth.googleLogin()">
-        <i class="fa fa-goolge"></i> Connect Google
-    </button>
-    <button (click)="auth.facebookLogin()">
-        <i class="fa fa-goolge"></i> Connect facebook
-    </button>
-</ng-template>
-
-<ng-template #authenticated>
-    <div *ngIf="auth.user | async as user">
-        <h1>Hello {{user.displayName}}</h1>
-        <h3>Part of {{user.association}}</h3>
-        <img [src]="user.photoURL" alt="">
-        <p>UID: {{user.uid}}</p>
-
-
-        <button (click)="auth.logout()">
-            <i class="fa fa-goolge"></i> logout
-        </button>
-
+<div *ngIf="user" class="container">
+    <div class="card">
+        <div class="row separator">
+            <div class="col-4 profile-picture">
+                <file-uploader *ngIf="!user.photoURL" [singleFile]="false" dropzoneText="Profile Picture" (filesUrls)="onUpload($event)">
+                </file-uploader>
+                <img *ngIf="user.photoURL"  [src]="user.photoURL" alt="">
+            </div>
+            <div class="col-8">
+                <h1>Hello {{user.displayName}}</h1>
+                <hr>
+                <h3>Part of {{user.association}}</h3>
+                <hr>
+                <p>UID: {{user.uid}}</p>
+                <hr>
+                <button (click)="auth.logout()">
+                    <i class="fa fa-goolge"></i> logout
+                </button>
+            </div>
+        </div>
     </div>
-</ng-template>
-
+</div>

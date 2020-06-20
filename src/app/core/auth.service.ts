@@ -103,6 +103,16 @@ export class AuthService {
     this.router.navigate(['login'])
   }
 
+  setProfilePicture(url){
+
+    this.user.subscribe(user => {
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+      user.photoURL = url;
+      return userRef.set(user, { merge: true })
+    })
+    
+  }
+
 
 
 

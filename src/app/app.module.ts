@@ -17,6 +17,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DropZoneDirective } from './directives/drop-zone.directive';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ChunkPipe,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    DropZoneDirective,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,
