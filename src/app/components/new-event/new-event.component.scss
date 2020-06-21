@@ -1,0 +1,18 @@
+.container {
+    max-width: 1200px;
+    padding-top: 20px;
+    margin: 0 auto;
+
+    .card {
+        padding: 20px;
+        
+        .profile-picture {
+            padding: 15px;
+            border-right: 1px solid gray;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

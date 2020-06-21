@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="card">
+        <div class="row separator">
+            <div class="col-8 profile-picture">
+                <file-uploader dropzoneText="Event Pictures" (filesUrls)="onUpload($event)">
+                </file-uploader>
+
+                
+        <form [formGroup]="eventForm" novalidate (ngSubmit)="createEvent(eventForm.value)">
+            <h3>New Event</h3>
+            <div class="input-group"
+                [ngClass]="{'invalid': eventName.invalid && (eventName.dirty || eventName.touched), 'valid': eventName.valid}">
+                <label for="eventName">Event Name:</label>
+                <input type="text" name="eventName" formControlName="eventName">
+                <div *ngIf="eventName.invalid && (eventName.dirty || eventName.touched)" class="input-error">
+                    <div *ngIf="eventName.errors.required">
+                        Event Name is required.
+                    </div>
+                    <div *ngIf="eventName.errors.minlength">
+                        Event Name too short.
+                    </div>
+                </div>
+            </div>
+            <div class="input-group"
+                [ngClass]="{'invalid': date.invalid && (date.dirty || date.touched), 'valid': date.valid}">
+                <label for="date">Event Name:</label>
+                <input type="date" name="date" formControlName="date">
+                <div *ngIf="date.invalid && (date.dirty || date.touched)" class="input-error">
+                    <div *ngIf="date.errors.required">
+                        Event Name is required.
+                    </div>
+                    <div *ngIf="date.errors.minlength">
+                        Event Name too short.
+                    </div>
+                </div>
+            </div>
+            <div class="input-group"
+                [ngClass]="{'invalid': location.invalid && (location.dirty || location.touched), 'valid': location.valid}">
+                <label for="location">Event Name:</label>
+                <input type="text" name="location" formControlName="location">
+                <div *ngIf="location.invalid && (location.dirty || location.touched)" class="input-error">
+                    <div *ngIf="location.errors.required">
+                        Event Name is required.
+                    </div>
+                    <div *ngIf="location.errors.minlength">
+                        Event Name too short.
+                    </div>
+                </div>
+            </div>
+            <div class="input-group"
+                [ngClass]="{'invalid': description.invalid && (description.dirty || description.touched), 'valid': description.valid}">
+                <label for="description">Event Name:</label>
+                <input type="text" name="description" formControlName="description">
+                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="input-error">
+                    <div *ngIf="description.errors.required">
+                        Event Name is required.
+                    </div>
+                    <div *ngIf="description.errors.minlength">
+                        Event Name too short.
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="eventForm.invalid">Login</button>
+        </form>
+
+            </div>
+            <div class="col-4">
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="title">
+        <img src="../../../assets/avatar.jpg" alt="">
+        
+        <span>
+            <div><a>USR</a> - Plantare de copaci</div>
+            <div><span>25.03.20</span>     La <span>bearia H</span></div>
+        </span>
+    </div>
+
+    <hr>
+
+    <div class="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
+    </div>
+</div>

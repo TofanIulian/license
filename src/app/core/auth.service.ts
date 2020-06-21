@@ -114,30 +114,8 @@ export class AuthService {
   }
 
 
-
-
-  canRead(user: User): boolean {
-    const allowed = ["admin", "reviewer", "writer"];
-    return this.checkAuthorization(user, allowed)
-  }
-
-  canSubmit(user: User): boolean {
-    const allowed = ["writer"];
-    return this.checkAuthorization(user, allowed)
-  }
-
-  canReview(user: User): boolean {
-    const allowed = ["admin", "reviewer"];
-    return this.checkAuthorization(user, allowed)
-  }
-
-  canCreateUser(user: User): boolean {
-    const allowed = ["admin"];
-    return this.checkAuthorization(user, allowed)
-  }
-
-  canViweAllDetails(user: User): boolean {
-    const allowed = ["admin"];
+  canCreateEvent(user: User): boolean {
+    const allowed = ["association"];
     return this.checkAuthorization(user, allowed)
   }
 

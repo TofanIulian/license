@@ -2,7 +2,7 @@
     <div class="card">
         <div class="row separator">
             <div class="col-4 profile-picture">
-                <file-uploader *ngIf="!user.photoURL" [singleFile]="false" dropzoneText="Profile Picture" (filesUrls)="onUpload($event)">
+                <file-uploader *ngIf="!user.photoURL" [singleFile]="true" dropzoneText="Profile Picture" (filesUrls)="onUpload($event)">
                 </file-uploader>
                 <img *ngIf="user.photoURL"  [src]="user.photoURL" alt="">
             </div>

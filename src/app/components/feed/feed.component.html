@@ -1,91 +1,31 @@
 <div class="container">
-    
-    <div class="card">
-        NEW Event- To do
-    </div>
 
-    <div class="card">
-        <div class="title">
-            <img src="../../../assets/avatar.jpg" alt="">
+    <button *ngIf="auth.canCreateEvent(user)" class="create-button" routerLink="/new-event">
+        <i class="fa fa-plus"></i> Create a New Event
+    </button>
+
+    <div *ngFor="let event of events" class="card">
+        <div class="carousel">
             
-            <span>
-                <div><a>USR</a> - Plantare de copaci</div>
-                <div><span>25.03.20</span>     La <span>bearia H</span></div>
-            </span>
+            <img [src]="event.photoUrls[0]" alt="">
+            <!-- <img *ngFor="let url of event.photoUrls" [src]="url" alt=""> -->
+            
+            <div class="title">
+                <img [src]="event.avatarUrl" alt="">
+
+                <span>
+                    <div><a>{{event.createdBy}}</a> - {{event.eventName}}</div>
+                    <div><span>{{event.date}}</span> La <span>{{event.location}}</span></div>
+                </span>
+            </div>
         </div>
 
         <hr>
 
         <div class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="title">
-            <img src="../../../assets/avatar.jpg" alt="">
+            {{event.description}}
             
-            <span>
-                <div><a>ASMI</a> - Party de 3 zile</div>
-                <div><span>24.03.20 - 26.03.20 -</span>     La <span>Beluga</span></div>
-            </span>
-        </div>
-
-        <hr>
-
-        <div class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
-        </div>
-    </div>
-    
-    <div class="card">
-        <div class="title">
-            <img src="../../../assets/avatar.jpg" alt="">
-            
-            <span>
-                <div><a>ASGG</a> - Mare heckaton</div>
-                <div><span>25.03.20</span>     La <span>bearia H</span></div>
-            </span>
-        </div>
-
-        <hr>
-
-        <div class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
-        </div>
-    </div>
-    
-    <div class="card">
-        <div class="title">
-            <img src="../../../assets/avatar.jpg" alt="">
-            
-            <span>
-                <div><a>USR</a> - Plantare de copaci</div>
-                <div><span>22.03.20</span>     La <span>bearia H</span></div>
-            </span>
-        </div>
-
-        <hr>
-
-        <div class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
         </div>
     </div>
 
-    <div class="card">
-        <div class="title">
-            <img src="../../../assets/avatar.jpg" alt="">
-            
-            <span>
-                <div><a>ASID</a> - Plantare de copaci</div>
-                <div><span>15.03.20</span>     La <span>bearia H</span></div>
-            </span>
-        </div>
-
-        <hr>
-
-        <div class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem...
-        </div>
-    </div>
 </div>

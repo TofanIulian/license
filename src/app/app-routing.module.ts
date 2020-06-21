@@ -8,12 +8,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './core/auth.guard';
 import { AnonymousGuard } from './core/anonymous.guard';
+import { NewEventComponent } from './components/new-event/new-event.component';
 
 const routes: Routes = [
   { path: 'feed', component: FeedComponent, canActivate: [AuthGuard] },
   { path: 'calendar', component: CalendarComponent, canActivate: [AuthGuard] },
   { path: 'map', component: MapComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  { path: 'new-event', component: NewEventComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent, canActivate: [AnonymousGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [AnonymousGuard]},
   { path: '', component: LoginComponent, canActivate: [AnonymousGuard]},

@@ -19,6 +19,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+import { NewEventComponent } from './components/new-event/new-event.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
     RegisterComponent,
     ProfileComponent,
     DropZoneDirective,
-    FileUploaderComponent
+    FileUploaderComponent,
+    NewEventComponent
   ],
   imports: [
     BrowserModule,
